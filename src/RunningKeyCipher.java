@@ -2,17 +2,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class RunningKeyCipher
 {
-    //Dictionary
-    //Less likely to result in complete matches in long words
-    //It might match in short words
-    //Matches on parts of words
-
-
     public static String shiftString(String text)
     {
         //Put the string into an array of characters
@@ -40,14 +33,18 @@ public class RunningKeyCipher
     }
 
     //Vigenère cipher from Lab 1
-    public static String encrypt(String text, String key)
+    public static String decrypt(String text, String key)
     {
-        String result = "";
 
+        String result = "";
         for(int i = 0; i < text.length(); i++)
         {
-            //Add the text together and 'wrap' it back around to stay in our range.
-            result += (char)(((text.charAt(i) + key.charAt(i % key.length())) - 97 * 2) % 26 + 97);
+            int value = text.charAt(i) - key.charAt(i%key.length());
+
+            if(value < 0) {
+                value += 26;
+            }
+            result += (char)(value + 97);
         }
 
         return result;
@@ -69,7 +66,7 @@ public class RunningKeyCipher
         System.out.println("Enter the word you think exists in the text:");
 
         //Get word input from user
-        String word = keyboardInput.nextLine();
+        String word = keyboardInput.nextLine().toLowerCase();
 
         //Repeat the whole string as many times as possible into loopingkey
         for(int i = 0; i < Math.floor(ciphertext.length()/word.length()); i++)
@@ -91,9 +88,16 @@ public class RunningKeyCipher
 
             try
             {
-                PrintWriter writer = new PrintWriter(word + Integer.toString(i) + ".txt", "UTF-8");
+                //Shorten the word in our filenames to a limit of 10 characters
+                String shortname = word.substring(0, Math.min(word.length(), 10));
 
-                String a = encrypt(ciphertext, loopingkey);
+                //Create that new directory (overwrites it if already exists)
+                new File("./output/" + shortname).mkdirs();
+
+                //Dump all output of each shifted key to a text file
+                PrintWriter writer = new PrintWriter("./output/" + shortname + "/" + shortname + Integer.toString(i) + ".txt", "UTF-8");
+
+                String a = decrypt(ciphertext, loopingkey);
 
                 writer.println(a);
                 writer.close();
@@ -105,7 +109,6 @@ public class RunningKeyCipher
 
         }
 
-        //From here on out, we need to find a way to run our string through a dictionary and find real words in it.
-        //https://www.perlmonks.org/?node_id=336331
+        //From here on out, we need to find a way to run our string through a dictionary, which is detailed in the write up.
     }
 }
