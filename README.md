@@ -43,6 +43,24 @@ From there, we begin to run scripts, located in the `etc` folder.
 * The first script (find_word.pl) will run and perform a search against a dictionary of the output file(s)
 * The second (trim.sh) will clean up the results into something nice we can look at
 
-# Words we think we found
-* <word> in <file>
-* brass in cipher1.txt
+# Words we think we found (examples)
+* In encryption7.txt (shifted 8)
+also
+-ding
+fading
+four
+span
+
+* In cipher0.txt (shifted 1)
+care
+pick
+ware
+
+* In cryptography0.txt (shifted 1)
+bill
+quit
+
+* In vigenere0.txt (shifted 1)
+bail
+eight
+
