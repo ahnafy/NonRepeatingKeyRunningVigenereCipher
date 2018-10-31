@@ -38,7 +38,7 @@ From there, we begin to run scripts, located in the `etc` folder.
 * Open a terminal
 * CD to CryptoLab2/etc/
 * To run the script, execute the following
-```./find_word.pl name_of_file < name_of_file.txt; ./trim.sh name_of_file```
+```./find_word.pl name_of_file < name_of_file.txt; ./trim.sh name_of_file It should be noted that the files you are running these scripts on must be in the same folder (CryptoLab2/etc)```
 * The first script (find_word.pl) will run and perform a search against a dictionary of the output file(s)
 * The second (trim.sh) will clean up the results into something nice we can look at
 
