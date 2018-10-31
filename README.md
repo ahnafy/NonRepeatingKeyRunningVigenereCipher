@@ -1,4 +1,4 @@
-# Explanation
+# READ ME
 
 What we currently have is a function that will duplicate a given key phrase as many times as the length of the cipher text is. For  example:
 
@@ -33,9 +33,14 @@ Next we have a folder that will be generated upon running RunningKeyCipher.java 
 
 From there, we begin to run scripts, located in the `etc` folder.
 
-Step one is to run find_word.pl with the first argument being the text resulting from running RunningKeyCipher (the stuff in the output/<word> folder). Once that finishes, it will produce a file called report.txt which is a usable, but messy, result of searching against the dictionary. To get it into a more easier-to-read and helpful format, we run it through the next script.
-
-Step two is optional, but helpful. You can put the results from step one into this script to have all the . removed from it.
+# How to run Scripts
+* !!Must be able to run bash and perl scripts on machine!!
+* Open a terminal
+* CD to CryptoLab2/etc/
+* To run the script, execute the following
+```./find_word.pl name_of_file < name_of_file.txt; ./trim.sh name_of_file```
+* The first script (find_word.pl) will run and perform a search against a dictionary of the output file(s)
+* The second (trim.sh) will clean up the results into something nice we can look at
 
 # Words we think we found
 * <word> in <file>
