@@ -4,14 +4,18 @@ use warnings;
 
 #Found from https://www.perlmonks.org/?node_id=336331 with no real useful java (or any) language equivalent?
 
-my $search_word = shift or die "search word required\n";
-
+#Variable init
+my $start_time = time();
+my $end_time;
 print "Starting..\n";
 
-print "Deleted old report..";
-unlink 'report.txt';
+#Read from standard input
+my $search_word = <STDIN>;
+chomp($search_word);
 
-open(my $fh, '>', 'report.txt');
+
+#Create a file called 'report.txt' unfortunately 
+open(my $fh, '>', $ARGV[0] . "_report.txt");
 
 my @words = ();
 open WORDS, "/usr/share/dict/words" or die "can't open words file\n";
@@ -25,4 +29,6 @@ while (<WORDS>) {
 close WORDS;
 close $fh;
 
-print "Done!\n";
+
+$end_time = time() - $start_time;
+print "Done in $end_time seconds.\n";

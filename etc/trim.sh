@@ -1,3 +1,7 @@
 #!/usr/bin/bash
 
-$1 grep -v '\.' | cat trimmed_report.txt
+NAME="$1_report.txt";
+
+grep -v '\.' "$1_report.txt" > "$1 trimmed.txt"; rm "$1_report.txt"
+
+
