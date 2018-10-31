@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 #Found from https://www.perlmonks.org/?node_id=336331 with no real useful java (or any) language equivalent?
+# We learned basic perl syntax and made tweaks to adjust to what we required and we then feed the output to trim.sh that we wrote.
 
 #Variable init
 my $start_time = time();
