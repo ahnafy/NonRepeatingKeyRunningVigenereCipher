@@ -23,6 +23,7 @@ We ran our two scripts a few times on a multitude of different 'buzzwords' we th
  * encryption
  * stream
  * vigenere
+ * bruteforce
  
 We then have a compiled file including all those words, which we skimmed to see if some were more 'english' than the others, and compiled a list of possible words.
 
