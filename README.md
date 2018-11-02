@@ -44,6 +44,8 @@ From there, we begin to run scripts, located in the `etc` folder.
 * The first script (find_word.pl) will run and perform a search against a dictionary of the output file(s)
 * The second (trim.sh) will clean up the results into something nice we can look at
 
+All the different outputs are in the output folder.
+
 # Words we think we found (examples)
 * In encryption7.txt (shifted 8)
 also
@@ -64,4 +66,5 @@ quit
 * In vigenere0.txt (shifted 1)
 bail
 eight
+
 

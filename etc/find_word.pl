@@ -29,7 +29,5 @@ while (<WORDS>) {
 }
 close WORDS;
 close $fh;
-
-
 $end_time = time() - $start_time;
 print "Done in $end_time seconds.\n";
