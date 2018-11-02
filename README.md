@@ -46,7 +46,7 @@ From there, we begin to run scripts, located in the `etc` folder.
 
 All the different outputs are in the output folder.
 
-# Words we think we found (examples)
+# Words we think we found (only a few examples) 
 * In encryption7.txt (shifted 8)
 also
 -ding
@@ -66,5 +66,22 @@ quit
 * In vigenere0.txt (shifted 1)
 bail
 eight
+
+* In bruteforce0.txt (shifted 1)
+fame
+draw
+song 
+bird 
+wine
+
+* In bruteforce1.txt (shifted 2)
+held 
+love 
+sort
+
+### To see all the different 4 or more lettered dictionary words that were found running against the 'buzzwords' of our choice: 
+``` cd inside the directory output and the files are labelled with a *trimmed.txt ```
+
+
 
 
