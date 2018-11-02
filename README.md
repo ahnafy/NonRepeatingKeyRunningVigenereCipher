@@ -1,6 +1,10 @@
-# READ ME
+# NON REPEATING KEY VIGENERE CIPHER
 
-What we currently have is a function that will duplicate a given key phrase as many times as the length of the cipher text is. For  example:
+## Goals:
+Your goal is to attempt to break the following text encrypted using the running key cipher. While you might not be able to decrypt the entire text, you may be able to identify likely words or gain other partial information about the encrypted text and/or the key. Your answer for this problem should contain all approaches that you used (with reasons why you think they might work) and any partial guesses about the plaintext and the key, with justification. 
+
+## Our Solution:
+We have a function that will duplicate a given key phrase as many times as the length of the cipher text is. For  example:
 
 * word we think is in plain text: crypto  
 ```
